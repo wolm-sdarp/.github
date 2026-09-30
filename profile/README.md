@@ -9,7 +9,9 @@ Hi there 👋
 - **Assessment**
   - [Assessment for Book 0](https://github.com/wolm-sdarp/assessment0)
   - [Assessment for Book 1](https://github.com/wolm-sdarp/assessment1)
-
+- **Other**
+  - [Hub](https://github.com/wolm-sdarp/wolm-sdarp.github.io)
+  - [Annexes](https://github.com/wolm-sdarp/annex)
 
 <!--
 
