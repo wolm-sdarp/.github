@@ -1,4 +1,15 @@
-## Hi there 👋
+# World of Linear Models: Statistics & Data Analysis in R for Psychologists
+
+Hi there 👋
+
+## Content
+- **Books**
+  - [Book 0: Math for Data Analysis](https://github.com/wolm-sdarp/book0)
+  - [Book 1: Statistics & Data Analysis](https://github.com/wolm-sdarp/book1)
+- **Assessment**
+  - [Assessment for Book 0](https://github.com/wolm-sdarp/assessment0)
+  - [Assessment for Book 1](https://github.com/wolm-sdarp/assessment1)
+
 
 <!--
 
