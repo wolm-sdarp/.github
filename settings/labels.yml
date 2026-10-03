@@ -31,36 +31,36 @@ delete: [bug, enhancement, enchancement, duplicate, invalid, question, wontfix]
 # reserve      — true: метка создаётся заранее, но используется после выполнения условия включения (§4.5)
 labels:
   # ---- ld: этапы образовательного проектирования -------------------------------------------
-  - name: "ld:1-vision"
+  - name: "ld:vision"
     color: "8957e5"
     description: "Global vision: goals, personas, jobs to be done, product canvas"
     sets: [content, docs]
     reserve: false
-    aliases: []
-  - name: "ld:2-competencies"
+    aliases: ["ld:1-vision"]
+  - name: "ld:competencies"
     color: "8957e5"
     description: "Competency profile"
     sets: [content, docs]
     reserve: false
-    aliases: [competences]
-  - name: "ld:3-outcomes"
+    aliases: ["competences", "ld:2-competencies"]
+  - name: "ld:outcomes"
     color: "8957e5"
     description: "Learning outcomes and their taxonomy levels (Bloom, SOLO, Fink)"
     sets: [content, docs]
     reserve: false
-    aliases: []
-  - name: "ld:4-assessment"
+    aliases: ["ld:3-outcomes"]
+  - name: "ld:assessment"
     color: "8957e5"
     description: "Assessment strategy and alignment with outcomes"
     sets: [content, docs]
     reserve: false
-    aliases: []
-  - name: "ld:5-content"
+    aliases: ["ld:4-assessment"]
+  - name: "ld:content"
     color: "8957e5"
     description: "Content structure, sequencing and instructional events"
     sets: [content, docs]
     reserve: false
-    aliases: []
+    aliases: ["ld:5-content"]
 
   # ---- content: форма содержимого ----------------------------------------------------------
   - name: "content:text"
