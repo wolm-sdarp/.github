@@ -1,0 +1,45 @@
+name: Задача по заданиям и формам контроля
+description: Разработать, проверить или откалибровать задания, упражнения, формы контроля
+type: Assessment
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Для упражнений внутри книги добавьте метку `content:exercise`; при необходимости — `ld:*` и `lang:*`.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Что нужно разработать или проверить
+      description: Набор заданий, форма контроля, этап (разработка, экспертиза, пилотирование, калибровка).
+    validations:
+      required: true
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Какие образовательные результаты покрываются
+      description: Ссылки на результаты или их формулировки.
+    validations:
+      required: true
+  - type: input
+    id: taxonomy
+    attributes:
+      label: Уровень таксономии
+      description: Уровень по используемой таксономии.
+      placeholder: "например, Bloom: применение; SOLO: relational"
+  - type: textarea
+    id: format
+    attributes:
+      label: Формат заданий
+      description: Тип заданий, количество, использование данных и кода, автоматическая проверка.
+  - type: textarea
+    id: scoring
+    attributes:
+      label: Критерии оценивания
+      description: Ключи, рубрики, правила начисления баллов, решения для самопроверки.
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности
+      description: Например, задания проверены, решения воспроизводятся, соответствие результатам подтверждено.
+    validations:
+      required: true

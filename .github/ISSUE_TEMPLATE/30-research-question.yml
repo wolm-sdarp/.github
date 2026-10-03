@@ -1,0 +1,36 @@
+name: Исследовательский вопрос
+description: Обзор литературы, проверка источников, выбор подхода или пакета, технический spike
+type: Research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Результат такой задачи — знание или решение, а не готовый артефакт.
+        По итогам исследования заводятся отдельные задачи (Writing, Feature, Maintenance и др.).
+  - type: textarea
+    id: question
+    attributes:
+      label: Вопрос
+      description: Что нужно выяснить; чем точнее формулировка, тем легче закончить исследование.
+    validations:
+      required: true
+  - type: input
+    id: timebox
+    attributes:
+      label: Ограничение по времени
+      description: Сколько времени можно потратить, прежде чем зафиксировать результат, каким бы он ни был.
+      placeholder: "например, 2 рабочие сессии"
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Ожидаемый результат
+      description: В какой форме фиксируется ответ и где он будет храниться.
+      placeholder: "например, краткий обзор в documentation/drafts/ и решение в комментарии к задаче"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст и известные источники

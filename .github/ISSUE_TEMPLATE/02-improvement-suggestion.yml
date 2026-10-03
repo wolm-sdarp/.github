@@ -1,0 +1,45 @@
+name: Предложение по улучшению
+description: Материал верен, но его можно сделать понятнее, полнее или короче
+type: Editing
+labels: ["status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Эта форма — для замечаний, когда ошибки нет, но текст, структуру или пример можно улучшить.
+        Если в материале есть ошибка, выберите форму «Ошибка в материале».
+  - type: input
+    id: where
+    attributes:
+      label: Где
+      description: Ссылка на страницу или раздел, глава, номер рисунка или упражнения.
+      placeholder: "https://… или «Глава 3, раздел 3.4»"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Что улучшить
+      description: Что именно вызвало затруднение или чего не хватает.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Зачем
+      description: Что изменится для читателя, если это улучшить.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Идея решения
+      description: Необязательно — как, по вашему мнению, это можно сделать.
+  - type: dropdown
+    id: reporter
+    attributes:
+      label: Вы сообщаете как
+      options:
+        - Читатель
+        - Рецензент
+        - Автор или участник проекта

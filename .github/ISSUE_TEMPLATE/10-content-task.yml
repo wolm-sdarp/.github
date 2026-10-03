@@ -1,0 +1,38 @@
+name: Задача по содержанию
+description: Написать новую единицу содержания — текст, формулы, иллюстрации, примеры, данные
+type: Writing
+body:
+  - type: markdown
+    attributes:
+      value: |
+        После создания добавьте метку `content:*` (форма содержимого) и, если нужно, `lang:*`.
+  - type: input
+    id: unit
+    attributes:
+      label: Единица содержания
+      description: Что нужно создать.
+      placeholder: "например, «Глава 5. Общая линейная модель: раздел о допущениях»"
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: План или структура
+      description: Основные части, ключевые идеи, примеры, которые нужно раскрыть.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Источники и материалы
+      description: Литература, ссылки, черновики, связанные issues.
+  - type: textarea
+    id: links
+    attributes:
+      label: Связь с образовательными результатами
+      description: Какие результаты обучения эта единица поддерживает (если они уже сформулированы).
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности
+      description: Как понять, что работа закончена (объём, проверки, рецензия, код запускается и т. п.).
+    validations:
+      required: true

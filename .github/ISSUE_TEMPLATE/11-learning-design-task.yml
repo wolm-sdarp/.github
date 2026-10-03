@@ -1,0 +1,46 @@
+name: Задача по образовательному проектированию
+description: Видение, компетенции, образовательные результаты, стратегия оценки, структура
+type: Learning Design
+body:
+  - type: markdown
+    attributes:
+      value: |
+        После создания добавьте метку `ld:*`, соответствующую выбранному этапу.
+        Сами задания и формы контроля разрабатываются отдельной задачей типа Assessment.
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Этап проектирования
+      options:
+        - 1. Global vision (цели, персоны, jobs to be done, product canvas)
+        - 2. Компетентностный профиль
+        - 3. Образовательные результаты
+        - 4. Assessment (стратегия оценки и согласование с результатами)
+        - 5. Контент (структура, последовательность, образовательные события)
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Что нужно спроектировать
+      description: Предмет работы и её границы.
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Входные данные
+      description: Результаты предыдущих этапов, документы, таксономии, персоны, ссылки на issues.
+  - type: textarea
+    id: artifact
+    attributes:
+      label: Ожидаемый артефакт
+      description: Что будет результатом и где он будет храниться.
+      placeholder: "например, таблица образовательных результатов главы 5 в documentation/content/…"
+    validations:
+      required: true
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Связь с образовательными результатами
+      description: Какие результаты охватывает задача и на каком уровне таксономии (Bloom, SOLO, Fink).

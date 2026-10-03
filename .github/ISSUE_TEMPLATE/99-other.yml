@@ -1,0 +1,19 @@
+name: Другое
+description: Задача, которая не подходит ни под одну из остальных форм
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Тип Task — запасной. Если вы часто выбираете эту форму, значит, системе типов не хватает нового типа — сообщите об этом при ближайшем пересмотре.
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      description: Что нужно сделать и зачем.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности

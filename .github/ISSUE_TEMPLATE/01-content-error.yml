@@ -1,0 +1,75 @@
+name: Ошибка в материале
+description: В тексте, формуле, коде, примере или ссылке есть ошибка
+type: Mistake
+labels: ["status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что заметили ошибку! Чем точнее описание, тем быстрее её можно исправить.
+        Если материал просто можно сделать понятнее, а ошибки в нём нет — выберите форму «Предложение по улучшению».
+  - type: input
+    id: where
+    attributes:
+      label: Где найдена ошибка
+      description: Ссылка на страницу или раздел, глава, номер формулы или рисунка.
+      placeholder: "https://… или «Глава 5, раздел 5.2, формула (5.3)»"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Что неверно
+      description: Процитируйте фрагмент и объясните, в чём ошибка.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Как должно быть
+      description: Предложите исправленный вариант, если он вам известен.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Обоснование
+      description: Источник, расчёт или короткий воспроизводимый пример, подтверждающий, что это ошибка.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Что затронуто
+      description: Поможет при разборе; при сомнении выберите «Не знаю».
+      options:
+        - Текст
+        - Формулы и обозначения
+        - Код и его вывод
+        - Иллюстрация
+        - Данные
+        - Упражнение
+        - Термины и глоссарий
+        - Источники и ссылки
+        - Не знаю
+  - type: input
+    id: version
+    attributes:
+      label: Версия материала
+      description: Номер версии, канал публикации или дата, когда вы читали материал.
+      placeholder: "например, v0.3.0 или 2026-10-01"
+  - type: dropdown
+    id: reporter
+    attributes:
+      label: Вы сообщаете как
+      options:
+        - Читатель
+        - Рецензент
+        - Автор или участник проекта
+  - type: checkboxes
+    id: duplicates
+    attributes:
+      label: Проверка
+      options:
+        - label: Я посмотрел(а) открытые issues — об этой ошибке ещё не сообщали
+          required: true
