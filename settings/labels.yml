@@ -1,0 +1,307 @@
+# Источник истины для меток (labels) организации wolm-sdarp.
+# Спецификация: documentation/content/gh-issues-docs.md (§4).
+# Применение:   python3 settings/apply-labels.py   (см. settings/README.md)
+#
+# Формат файла намеренно простой (скрипт читает его без сторонних библиотек):
+#   - один уровень вложенности, без якорей и многострочных значений;
+#   - строки и цвета — в двойных кавычках;
+#   - списки — в одну строку: [a, b, c].
+
+org: wolm-sdarp
+
+# К какому набору относится репозиторий (набор определяет, какие метки в нём нужны; §4.3).
+# Репозиторий, которого ещё нет в организации (например, manim), пропускается.
+repo_sets:
+  content: [book0, book1, assessment0, assessment1, annex]
+  docs: [documentation]
+  platform: [wolm-sdarp.github.io, .github, manim]
+
+# Метки, которые создают сторонние инструменты (Dependabot); скрипт их не трогает.
+ignore: [javascript, github_actions]
+
+# Устаревшие метки: заменены типами задач, close reasons или Discussions (§10.2).
+# Удаляются только с флагом --delete; перед удалением скрипт показывает, сколько задач на них ссылается.
+delete: [bug, enhancement, enchancement, duplicate, invalid, question, wontfix]
+
+# name         — имя метки (до 50 символов)
+# color        — hex без решётки
+# description  — до 100 символов, на английском
+# sets         — в каких наборах репозиториев метка нужна
+# aliases      — прежние имена: метка с таким именем будет переименована (история задач сохраняется)
+# reserve      — true: метка создаётся заранее, но используется после выполнения условия включения (§4.5)
+labels:
+  # ---- ld: этапы образовательного проектирования -------------------------------------------
+  - name: "ld:1-vision"
+    color: "8957e5"
+    description: "Global vision: goals, personas, jobs to be done, product canvas"
+    sets: [content, docs]
+    reserve: false
+    aliases: []
+  - name: "ld:2-competencies"
+    color: "8957e5"
+    description: "Competency profile"
+    sets: [content, docs]
+    reserve: false
+    aliases: [competences]
+  - name: "ld:3-outcomes"
+    color: "8957e5"
+    description: "Learning outcomes and their taxonomy levels (Bloom, SOLO, Fink)"
+    sets: [content, docs]
+    reserve: false
+    aliases: []
+  - name: "ld:4-assessment"
+    color: "8957e5"
+    description: "Assessment strategy and alignment with outcomes"
+    sets: [content, docs]
+    reserve: false
+    aliases: []
+  - name: "ld:5-content"
+    color: "8957e5"
+    description: "Content structure, sequencing and instructional events"
+    sets: [content, docs]
+    reserve: false
+    aliases: []
+
+  # ---- content: форма содержимого ----------------------------------------------------------
+  - name: "content:text"
+    color: "1f6feb"
+    description: "Prose: explanations, examples, callouts"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:math"
+    color: "1f6feb"
+    description: "Formulas, derivations, notation"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:code"
+    color: "1f6feb"
+    description: "R code and its output in the text"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:figure"
+    color: "1f6feb"
+    description: "Plots, diagrams, illustrations"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:data"
+    color: "1f6feb"
+    description: "Datasets used in examples and exercises"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:exercise"
+    color: "1f6feb"
+    description: "Exercises, solutions, hints"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:glossary"
+    color: "1f6feb"
+    description: "Terms, glossary, index, notation tables"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:references"
+    color: "1f6feb"
+    description: "Bibliography, citations, cross-references and links"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "content:video"
+    color: "1f6feb"
+    description: "Video illustrations (manim)"
+    sets: [content]
+    reserve: true
+    aliases: []
+
+  # ---- tech: техническая область -----------------------------------------------------------
+  - name: "tech:quarto"
+    color: "2da44e"
+    description: "Quarto projects: config, extensions, filters, shortcodes, crossref"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "tech:style"
+    color: "2da44e"
+    description: "Visual style: SCSS, themes, typography, brand"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "tech:ci"
+    color: "2da44e"
+    description: "GitHub Actions and automation"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "tech:deploy"
+    color: "2da44e"
+    description: "Building and publishing: Pages, branches, releases"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "tech:deps"
+    color: "2da44e"
+    description: "Dependencies: renv, R and Node packages, Dependabot"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "tech:repo"
+    color: "2da44e"
+    description: "Repository settings: branches, rulesets, templates, labels"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "tech:docs"
+    color: "2da44e"
+    description: "Project documentation vault (Obsidian, Quartz)"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: [documentation]
+  - name: "tech:manim"
+    color: "2da44e"
+    description: "Python and manim scripts for video illustrations"
+    sets: [content, docs, platform]
+    reserve: true
+    aliases: []
+
+  # ---- lang: языковая версия ---------------------------------------------------------------
+  - name: "lang:ru-RU"
+    color: "bf8700"
+    description: "Source language version"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "lang:en-US"
+    color: "bf8700"
+    description: "English (US) version"
+    sets: [content]
+    reserve: false
+    aliases: []
+  - name: "lang:ru-petr1708"
+    color: "bf8700"
+    description: "Pre-reform Russian orthography version"
+    sets: [content]
+    reserve: false
+    aliases: []
+
+  # ---- src: источник обращения -------------------------------------------------------------
+  - name: "src:reader"
+    color: "d4761c"
+    description: "Reported by a reader"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "src:reviewer"
+    color: "d4761c"
+    description: "Reported by a reviewer (scientific, methodological, editorial)"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "src:annotation"
+    color: "d4761c"
+    description: "Transferred from a Hypothesis annotation"
+    sets: [content, docs, platform]
+    reserve: true
+    aliases: []
+
+  # ---- status: исключения в процессе -------------------------------------------------------
+  - name: "status:needs-triage"
+    color: "6e7781"
+    description: "New issue waiting for type, labels and priority"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "status:needs-info"
+    color: "6e7781"
+    description: "Waiting for details from the reporter"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+
+  # ---- сквозные ----------------------------------------------------------------------------
+  - name: "accessibility"
+    color: "bf3989"
+    description: "Barrier affecting people with disabilities"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "reproducibility"
+    color: "bf3989"
+    description: "Results, code or environment cannot be reproduced"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+
+  # ---- сообщество и инструменты (имена и цвета стандартные) --------------------------------
+  - name: "good first issue"
+    color: "7057ff"
+    description: "Good for newcomers"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "help wanted"
+    color: "008672"
+    description: "Extra attention is needed"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+  - name: "dependencies"
+    color: "0366d6"
+    description: "Pull requests that update a dependency file"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: []
+
+  # ---- резерв: релизы и каналы (включаются по условиям §9.2) -------------------------------
+  - name: "bump:major"
+    color: "1b7c83"
+    description: "PR: breaks links, anchors or numbering readers rely on"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "bump:minor"
+    color: "1b7c83"
+    description: "PR: adds a new content unit (chapter, section, exercise, dataset)"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "bump:patch"
+    color: "1b7c83"
+    description: "PR: fixes or improves existing content without new units"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "bump:none"
+    color: "1b7c83"
+    description: "PR: CI, documentation or service changes with no effect on the product"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "channel:alpha"
+    color: "1b7c83"
+    description: "Relates to the alpha publication channel"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "channel:beta"
+    color: "1b7c83"
+    description: "Relates to the beta publication channel"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "channel:stable"
+    color: "1b7c83"
+    description: "Relates to the stable publication channel"
+    sets: [content]
+    reserve: true
+    aliases: []
+  - name: "erratum"
+    color: "1b7c83"
+    description: "Substantive error in published content; needs a changelog entry"
+    sets: [content]
+    reserve: true
+    aliases: []
