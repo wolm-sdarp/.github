@@ -1,6 +1,7 @@
 name: Задача по заданиям и формам контроля
 description: Разработать, проверить или откалибровать задания, упражнения, формы контроля
 type: Assessment
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:

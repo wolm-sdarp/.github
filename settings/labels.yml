@@ -21,7 +21,7 @@ ignore: [javascript, github_actions]
 
 # Устаревшие метки: заменены типами задач, close reasons или Discussions (§10.2).
 # Удаляются только с флагом --delete; перед удалением скрипт показывает, сколько задач на них ссылается.
-delete: [bug, enhancement, enchancement, duplicate, invalid, question, wontfix]
+delete: [bug, enhancement, enchancement, question]
 
 # name         — имя метки (до 50 символов)
 # color        — hex без решётки
@@ -31,31 +31,31 @@ delete: [bug, enhancement, enchancement, duplicate, invalid, question, wontfix]
 # reserve      — true: метка создаётся заранее, но используется после выполнения условия включения (§4.5)
 labels:
   # ---- ld: этапы образовательного проектирования -------------------------------------------
-  - name: "ld:1-vision"
+  - name: "ld:vision"
     color: "8957e5"
     description: "Global vision: goals, personas, jobs to be done, product canvas"
     sets: [content, docs]
     reserve: false
     aliases: []
-  - name: "ld:2-competencies"
+  - name: "ld:competencies"
     color: "8957e5"
     description: "Competency profile"
     sets: [content, docs]
     reserve: false
-    aliases: [competences]
-  - name: "ld:3-outcomes"
+    aliases: ["competences"]
+  - name: "ld:outcomes"
     color: "8957e5"
     description: "Learning outcomes and their taxonomy levels (Bloom, SOLO, Fink)"
     sets: [content, docs]
     reserve: false
     aliases: []
-  - name: "ld:4-assessment"
+  - name: "ld:assessment"
     color: "8957e5"
     description: "Assessment strategy and alignment with outcomes"
     sets: [content, docs]
     reserve: false
     aliases: []
-  - name: "ld:5-content"
+  - name: "ld:content"
     color: "8957e5"
     description: "Content structure, sequencing and instructional events"
     sets: [content, docs]
@@ -210,17 +210,35 @@ labels:
 
   # ---- status: исключения в процессе -------------------------------------------------------
   - name: "status:needs-triage"
-    color: "6e7781"
+    color: "e4e669"
     description: "New issue waiting for type, labels and priority"
     sets: [content, docs, platform]
     reserve: false
     aliases: []
   - name: "status:needs-info"
-    color: "6e7781"
+    color: "e4e669"
     description: "Waiting for details from the reporter"
     sets: [content, docs, platform]
     reserve: false
     aliases: []
+  - name: "status:invalid"
+    color: "e4e669"
+    description: "This doesn't seem right"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: [invalid]
+  - name: "status:duplicate"
+    color: "f3f6f4"
+    description: "This doesn't seem right"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: [duplicate]
+  - name: "status:wontfix"
+    color: "f3f6f4"
+    description: "This doesn't seem right"
+    sets: [content, docs, platform]
+    reserve: false
+    aliases: [wontfix]
 
   # ---- сквозные ----------------------------------------------------------------------------
   - name: "accessibility"

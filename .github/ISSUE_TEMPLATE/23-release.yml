@@ -1,0 +1,84 @@
+name: Выпуск версии
+description: Подготовить и опубликовать версию книги или другого продукта
+type: Release
+labels: ["status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        После создания добавьте метку `channel:*` и, если нужно, `tech:deploy`; привяжите задачу к milestone выпуска.
+        Порядок выпуска — в разделе «Релизы и теги» документации по Git и GitHub.
+        Форма и тип в резерве: они включаются, когда принят SemVer и автоматизация выпусков.
+  - type: input
+    id: product
+    attributes:
+      label: Что выпускается
+      placeholder: "например, «Книга 1, русская версия»"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия
+      description: Номер по SemVer; для предварительных версий — с суффиксом канала.
+      placeholder: "например, v0.3.0-beta.1 или v1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: channel
+    attributes:
+      label: Канал публикации
+      options:
+        - alpha
+        - beta (для рецензентов)
+        - stable
+    validations:
+      required: true
+  - type: dropdown
+    id: bump
+    attributes:
+      label: Изменение версии
+      description: MAJOR — ломает ссылки читателей, MINOR — новая содержательная единица, PATCH — исправления.
+      options:
+        - MAJOR
+        - MINOR
+        - PATCH
+        - Не применимо (предварительная версия)
+  - type: textarea
+    id: scope
+    attributes:
+      label: Что входит в выпуск
+      description: Главы и изменения, ссылки на issues и pull requests, чего в выпуске намеренно нет.
+    validations:
+      required: true
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Чек-лист выпуска
+      description: Удалите пункты, которые не относятся к выбранному каналу.
+      value: |
+        - [ ] Проект собирается без предупреждений
+        - [ ] Все главы из состава выпуска дописаны; черновики не включены
+        - [ ] Переводы не устарели (`source-commit`)
+        - [ ] Собственная вычитка сделана
+        - [ ] Замечания рецензентов обработаны (для stable)
+        - [ ] Полная чистая сборка без `_freeze` прошла (для stable)
+        - [ ] Ссылки проверены
+        - [ ] Версия, лицензия и CHANGELOG заполнены
+        - [ ] Релизный PR `dev` → `master` слит merge-коммитом
+        - [ ] Аннотированный тег поставлен на `master`
+        - [ ] GitHub Release создан, заметки отредактированы
+        - [ ] Публикация проверена на нужном канале
+        - [ ] Milestone закрыт
+  - type: textarea
+    id: notes
+    attributes:
+      label: Заметки для читателя
+      description: Что нового и что исправлено — для CHANGELOG и описания релиза.
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности
+      description: Например, версия опубликована на нужном канале, тег и релиз созданы, чек-лист закрыт.
+    validations:
+      required: true

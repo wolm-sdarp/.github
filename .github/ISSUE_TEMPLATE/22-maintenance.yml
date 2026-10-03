@@ -1,6 +1,7 @@
 name: Техническое обслуживание
 description: Зависимости, рефакторинг, настройки репозитория — без новой функциональности
 type: Maintenance
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:

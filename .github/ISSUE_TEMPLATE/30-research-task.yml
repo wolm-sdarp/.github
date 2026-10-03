@@ -1,6 +1,7 @@
 name: Исследовательский вопрос
 description: Обзор литературы, проверка источников, выбор подхода или пакета, технический spike
 type: Research
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:

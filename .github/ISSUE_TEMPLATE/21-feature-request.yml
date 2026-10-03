@@ -1,6 +1,7 @@
 name: Техническая возможность
 description: Новый инструмент, расширение Quarto, шаблон или автоматизация
 type: Feature
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
