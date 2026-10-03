@@ -1,6 +1,7 @@
 name: Другое
 description: Задача, которая не подходит ни под одну из остальных форм
 type: Task
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:

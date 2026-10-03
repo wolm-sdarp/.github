@@ -1,6 +1,7 @@
 name: Задача по содержанию
 description: Написать новую единицу содержания — текст, формулы, иллюстрации, примеры, данные
 type: Writing
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:

@@ -1,6 +1,7 @@
 name: Задача по образовательному проектированию
 description: Видение, компетенции, образовательные результаты, стратегия оценки, структура
 type: Learning Design
+labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:

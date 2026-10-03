@@ -1,0 +1,80 @@
+name: Задача по переводу и локализации
+description: Перевести или адаптировать единицу содержания для другой языковой версии
+type: Localization
+labels: ["status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        После создания добавьте метку `lang:*` (для этого типа она обязательна) и, если нужно, `content:*`.
+        Ошибку в уже готовом переводе оформляйте формой «Ошибка в материале» с меткой `lang:*`.
+  - type: dropdown
+    id: target
+    attributes:
+      label: Языковая версия
+      options:
+        - en-US — английский (США)
+        - ru-petr1708 — русский, дореформенная орфография
+        - Другая (укажите в описании)
+    validations:
+      required: true
+  - type: input
+    id: unit
+    attributes:
+      label: Единица для перевода
+      description: Что именно переводится или адаптируется.
+      placeholder: "например, «Глава 5, разделы 5.1–5.3» или «Глоссарий»"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Вид работы
+      options:
+        - Первичный перевод
+        - Обновление перевода после изменений в исходнике
+        - Редактура и вычитка готового перевода
+        - Адаптация примеров, данных и форматов
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Исходная версия
+      description: Коммит или тег исходного текста, с которого делается перевод (`source-commit`).
+      placeholder: "например, a1b2c3d или v0.3.0"
+    validations:
+      required: true
+  - type: textarea
+    id: adaptation
+    attributes:
+      label: Что адаптировать, кроме текста
+      description: Примеры, датасеты, форматы чисел и дат, стиль цитирования, обозначения, иллюстрации с текстом.
+  - type: textarea
+    id: terms
+    attributes:
+      label: Терминология
+      description: Ссылка на глоссарий; термины, пары которых нужно согласовать или добавить.
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Участие ИИ
+      description: Использование ИИ должно быть явно указано (см. политику использования ИИ проекта).
+      options:
+        - Не используется
+        - Машинный черновик с последующей вычиткой человеком
+        - Точечная помощь (термины, проверка, варианты формулировок)
+    validations:
+      required: true
+  - type: input
+    id: proofreader
+    attributes:
+      label: Кто вычитывает
+      description: Человек, владеющий языком перевода; для `ru-petr1708` — эксперт по этой орфографии.
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности
+      description: Например, переведено N из M разделов, термины соответствуют глоссарию, формулы, код и ссылки проверены, вычитка человеком пройдена, `source-commit` обновлён, сборка языковой версии проходит.
+    validations:
+      required: true
