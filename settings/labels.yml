@@ -36,31 +36,31 @@ labels:
     description: "Global vision: goals, personas, jobs to be done, product canvas"
     sets: [content, docs]
     reserve: false
-    aliases: ["ld:1-vision"]
+    aliases: []
   - name: "ld:competencies"
     color: "8957e5"
     description: "Competency profile"
     sets: [content, docs]
     reserve: false
-    aliases: ["competences", "ld:2-competencies"]
+    aliases: ["competences"]
   - name: "ld:outcomes"
     color: "8957e5"
     description: "Learning outcomes and their taxonomy levels (Bloom, SOLO, Fink)"
     sets: [content, docs]
     reserve: false
-    aliases: ["ld:3-outcomes"]
+    aliases: []
   - name: "ld:assessment"
     color: "8957e5"
     description: "Assessment strategy and alignment with outcomes"
     sets: [content, docs]
     reserve: false
-    aliases: ["ld:4-assessment"]
+    aliases: []
   - name: "ld:content"
     color: "8957e5"
     description: "Content structure, sequencing and instructional events"
     sets: [content, docs]
     reserve: false
-    aliases: ["ld:5-content"]
+    aliases: []
 
   # ---- content: форма содержимого ----------------------------------------------------------
   - name: "content:text"
