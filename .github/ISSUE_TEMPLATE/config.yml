@@ -9,7 +9,7 @@ blank_issues_enabled: false
 # Ссылка на Discussions для вопросов по материалу (вопрос — не issue).
 # Раскомментируйте после включения Discussions в организации или нужном репозитории
 # и при необходимости замените ссылку.
-# contact_links:
-#   - name: Вопрос по материалу
-#     url: https://github.com/orgs/wolm-sdarp/discussions
-#     about: Вопросы, обсуждения и идеи — в Discussions. Issue нужен, если в материале ошибка или его нужно изменить.
+contact_links:
+  - name: Вопрос по материалу
+    url: https://github.com/orgs/wolm-sdarp/discussions
+    about: Вопросы, обсуждения и идеи — в Discussions. Issue нужен, если в материале ошибка или его нужно изменить.
