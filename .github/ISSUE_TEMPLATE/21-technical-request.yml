@@ -1,0 +1,34 @@
+name: Техническая возможность
+description: Новый инструмент, расширение Quarto, шаблон или автоматизация
+type: Feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        После создания добавьте метку `tech:*`. Улучшение существующей технической части без новой функциональности
+        (обновление зависимостей, рефакторинг, настройки) оформляется формой «Техническое обслуживание».
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу нужно решить
+      description: Что сейчас неудобно, долго или невозможно и для кого.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Предложение
+      description: Что должно появиться и как это будет использоваться.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Рассмотренные альтернативы
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий готовности
+      description: Как проверить, что возможность работает (например, пример использования или проверка в CI).
+    validations:
+      required: true

@@ -1,0 +1,28 @@
+name: Эпик
+description: Контейнер для связанных задач — глава, часть книги, раунд рецензирования
+type: Epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Эпик собственной работы не содержит. Все задачи добавляйте как sub-issues; эпик закрывается, когда закрыты все вложенные задачи.
+        Рекомендуемая глубина — два уровня.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Цель и результат
+      description: Что будет готово, когда эпик закроется.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Состав
+      description: "Какие задачи входят (по типам: проектирование, написание, задания, редактура, проверка)."
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерий закрытия
+      description: Условия, при которых эпик считается завершённым.
+    validations:
+      required: true

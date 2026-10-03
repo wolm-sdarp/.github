@@ -1,0 +1,29 @@
+name: Техническое обслуживание
+description: Зависимости, рефакторинг, настройки репозитория — без новой функциональности
+type: Maintenance
+body:
+  - type: markdown
+    attributes:
+      value: |
+        После создания добавьте метку `tech:*` (например, `tech:deps`, `tech:repo`, `tech:ci`).
+  - type: textarea
+    id: what
+    attributes:
+      label: Что нужно сделать
+      description: Какие зависимости, настройки или части кода затрагиваются.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Зачем
+      description: "Причина: устаревшая версия, предупреждение, подготовка к релизу, упрощение поддержки."
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: Как проверить результат
+      description: Например, сборка проходит, `renv::status()` без расхождений, workflow зелёный.
+    validations:
+      required: true
