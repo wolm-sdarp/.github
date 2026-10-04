@@ -229,13 +229,13 @@ labels:
     aliases: [invalid]
   - name: "status:duplicate"
     color: "f3f6f4"
-    description: "This doesn't seem right"
+    description: "This issue or pull request already exists"
     sets: [content, docs, platform]
     reserve: false
     aliases: [duplicate]
   - name: "status:wontfix"
     color: "f3f6f4"
-    description: "This doesn't seem right"
+    description: "This will not be worked on"
     sets: [content, docs, platform]
     reserve: false
     aliases: [wontfix]
