@@ -21,7 +21,7 @@ ignore: [javascript, github_actions]
 
 # Устаревшие метки: заменены типами задач, close reasons или Discussions (§10.2).
 # Удаляются только с флагом --delete; перед удалением скрипт показывает, сколько задач на них ссылается.
-delete: [bug, enhancement, enchancement, question]
+delete: [bug, enhancement, enchancement, question, status:needs-triage]
 
 # name         — имя метки (до 50 символов)
 # color        — hex без решётки
@@ -209,12 +209,12 @@ labels:
     aliases: []
 
   # ---- status: исключения в процессе -------------------------------------------------------
-  - name: "status:needs-triage"
-    color: "e4e669"
-    description: "New issue waiting for type, labels and priority"
-    sets: [content, docs, platform]
-    reserve: false
-    aliases: []
+#  - name: "status:needs-triage"
+#    color: "e4e669"
+#    description: "New issue waiting for type, labels and priority"
+#    sets: [content, docs, platform]
+#    reserve: false
+#    aliases: []
   - name: "status:needs-info"
     color: "e4e669"
     description: "Waiting for details from the reporter"
