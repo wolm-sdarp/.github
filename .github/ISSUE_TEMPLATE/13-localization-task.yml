@@ -1,80 +1,104 @@
-name: Задача по переводу и локализации
-description: Перевести или адаптировать единицу содержания для другой языковой версии
+name: Translation and localization task / Задача по переводу и локализации
+description: Translate or adapt a content unit for another language version / Перевести или адаптировать единицу содержания для другой языковой версии
 type: Localization
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        After creating the issue, add a `lang:*` label (required for this type) and, if needed, `content:*`.
+        Report a mistake in an already finished translation with the "Content mistake" form and a `lang:*` label.
+
         После создания добавьте метку `lang:*` (для этого типа она обязательна) и, если нужно, `content:*`.
         Ошибку в уже готовом переводе оформляйте формой «Ошибка в материале» с меткой `lang:*`.
   - type: dropdown
     id: target
     attributes:
-      label: Языковая версия
+      label: Language version / Языковая версия
       options:
-        - en-US — английский (США)
-        - ru-petr1708 — русский, дореформенная орфография
-        - Другая (укажите в описании)
+        - en-US — English (US) / en-US — английский (США)
+        - ru-petr1708 — Russian, pre-reform orthography / ru-petr1708 — русский, дореформенная орфография
+        - Other (specify in the description) / Другая (укажите в описании)
     validations:
       required: true
   - type: input
     id: unit
     attributes:
-      label: Единица для перевода
-      description: Что именно переводится или адаптируется.
-      placeholder: "например, «Глава 5, разделы 5.1–5.3» или «Глоссарий»"
+      label: Unit to translate / Единица для перевода
+      description: |-
+        What exactly is being translated or adapted.
+
+        Что именно переводится или адаптируется.
+      placeholder: "e.g., “Chapter 5, sections 5.1–5.3” or “Glossary” / например, «Глава 5, разделы 5.1–5.3» или «Глоссарий»"
     validations:
       required: true
   - type: dropdown
     id: kind
     attributes:
-      label: Вид работы
+      label: Type of work / Вид работы
       options:
-        - Первичный перевод
-        - Обновление перевода после изменений в исходнике
-        - Редактура и вычитка готового перевода
-        - Адаптация примеров, данных и форматов
+        - Initial translation / Первичный перевод
+        - Updating a translation after changes in the source / Обновление перевода после изменений в исходнике
+        - Editing and proofreading a finished translation / Редактура и вычитка готового перевода
+        - Adapting examples, data and formats / Адаптация примеров, данных и форматов
     validations:
       required: true
   - type: input
     id: source
     attributes:
-      label: Исходная версия
-      description: Коммит или тег исходного текста, с которого делается перевод (`source-commit`).
-      placeholder: "например, a1b2c3d или v0.3.0"
+      label: Source version / Исходная версия
+      description: |-
+        The commit or tag of the source text the translation is made from (`source-commit`).
+
+        Коммит или тег исходного текста, с которого делается перевод (`source-commit`).
+      placeholder: "e.g., a1b2c3d or v0.3.0 / например, a1b2c3d или v0.3.0"
     validations:
       required: true
   - type: textarea
     id: adaptation
     attributes:
-      label: Что адаптировать, кроме текста
-      description: Примеры, датасеты, форматы чисел и дат, стиль цитирования, обозначения, иллюстрации с текстом.
+      label: What to adapt besides the text / Что адаптировать, кроме текста
+      description: |-
+        Examples, datasets, number and date formats, citation style, notation, illustrations containing text.
+
+        Примеры, датасеты, форматы чисел и дат, стиль цитирования, обозначения, иллюстрации с текстом.
   - type: textarea
     id: terms
     attributes:
-      label: Терминология
-      description: Ссылка на глоссарий; термины, пары которых нужно согласовать или добавить.
+      label: Terminology / Терминология
+      description: |-
+        A link to the glossary; terms whose translations need to be agreed on or added.
+
+        Ссылка на глоссарий; термины, пары которых нужно согласовать или добавить.
   - type: dropdown
     id: ai
     attributes:
-      label: Участие ИИ
-      description: Использование ИИ должно быть явно указано (см. политику использования ИИ проекта).
+      label: AI involvement / Участие ИИ
+      description: |-
+        AI use must be stated explicitly (see the project's AI usage policy).
+
+        Использование ИИ должно быть явно указано (см. политику использования ИИ проекта).
       options:
-        - Не используется
-        - Машинный черновик с последующей вычиткой человеком
-        - Точечная помощь (термины, проверка, варианты формулировок)
+        - Not used / Не используется
+        - Machine draft followed by human proofreading / Машинный черновик с последующей вычиткой человеком
+        - Selective help (terms, checking, wording options) / Точечная помощь (термины, проверка, варианты формулировок)
     validations:
       required: true
   - type: input
     id: proofreader
     attributes:
-      label: Кто вычитывает
-      description: Человек, владеющий языком перевода; для `ru-petr1708` — эксперт по этой орфографии.
+      label: Who proofreads / Кто вычитывает
+      description: |-
+        A person who knows the target language; for `ru-petr1708`, an expert in this orthography.
+
+        Человек, владеющий языком перевода; для `ru-petr1708` — эксперт по этой орфографии.
   - type: textarea
     id: done
     attributes:
-      label: Критерий готовности
-      description: Например, переведено N из M разделов, термины соответствуют глоссарию, формулы, код и ссылки проверены, вычитка человеком пройдена, `source-commit` обновлён, сборка языковой версии проходит.
+      label: Definition of done / Критерий готовности
+      description: |-
+        For example: N of M sections translated, terms match the glossary, formulas, code and links checked, human proofreading passed, `source-commit` updated, the language version builds successfully.
+
+        Например, переведено N из M разделов, термины соответствуют глоссарию, формулы, код и ссылки проверены, вычитка человеком пройдена, `source-commit` обновлён, сборка языковой версии проходит.
     validations:
       required: true

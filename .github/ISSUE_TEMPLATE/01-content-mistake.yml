@@ -1,75 +1,96 @@
-name: Ошибка в материале
-description: В тексте, формуле, коде, примере или ссылке есть ошибка
+name: Content mistake / Ошибка в материале
+description: A mistake in text, formula, code, example or link / В тексте, формуле, коде, примере или ссылке есть ошибка
 type: Mistake
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        Thank you for spotting a mistake! The more precise the description, the faster it can be fixed.
+        If the material is correct but could be made clearer, choose the "Edit proposal" form.
+
         Спасибо, что заметили ошибку! Чем точнее описание, тем быстрее её можно исправить.
         Если материал просто можно сделать понятнее, а ошибки в нём нет — выберите форму «Предложение по улучшению».
   - type: input
     id: where
     attributes:
-      label: Где найдена ошибка
-      description: Ссылка на страницу или раздел, глава, номер формулы или рисунка.
-      placeholder: "https://… или «Глава 5, раздел 5.2, формула (5.3)»"
+      label: Where the mistake is / Где найдена ошибка
+      description: |-
+        A link to the page or section, chapter, formula or figure number.
+
+        Ссылка на страницу или раздел, глава, номер формулы или рисунка.
+      placeholder: "https://… or “Chapter 5, section 5.2, formula (5.3)” / https://… или «Глава 5, раздел 5.2, формула (5.3)»"
     validations:
       required: true
   - type: textarea
     id: what
     attributes:
-      label: Что неверно
-      description: Процитируйте фрагмент и объясните, в чём ошибка.
+      label: What is wrong / Что неверно
+      description: |-
+        Quote the fragment and explain what the mistake is.
+
+        Процитируйте фрагмент и объясните, в чём ошибка.
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Как должно быть
-      description: Предложите исправленный вариант, если он вам известен.
+      label: What it should be / Как должно быть
+      description: |-
+        Suggest a corrected version if you know it.
+
+        Предложите исправленный вариант, если он вам известен.
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Обоснование
-      description: Источник, расчёт или короткий воспроизводимый пример, подтверждающий, что это ошибка.
+      label: Justification / Обоснование
+      description: |-
+        A source, a calculation or a short reproducible example confirming that this is a mistake.
+
+        Источник, расчёт или короткий воспроизводимый пример, подтверждающий, что это ошибка.
     validations:
       required: true
   - type: dropdown
     id: kind
     attributes:
-      label: Что затронуто
-      description: Поможет при разборе; при сомнении выберите «Не знаю».
+      label: What is affected / Что затронуто
+      description: |-
+        Helps with triage; if in doubt, choose "Don't know".
+
+        Поможет при разборе; при сомнении выберите «Не знаю».
       options:
-        - Текст
-        - Формулы и обозначения
-        - Код и его вывод
-        - Иллюстрация
-        - Данные
-        - Упражнение
-        - Термины и глоссарий
-        - Источники и ссылки
-        - Не знаю
+        - Text / Текст
+        - Formulas and notation / Формулы и обозначения
+        - Code and its output / Код и его вывод
+        - Illustration / Иллюстрация
+        - Data / Данные
+        - Exercise / Упражнение
+        - Terms and glossary / Термины и глоссарий
+        - Sources and references / Источники и ссылки
+        - Don't know / Не знаю
   - type: input
     id: version
     attributes:
-      label: Версия материала
-      description: Номер версии, канал публикации или дата, когда вы читали материал.
-      placeholder: "например, v0.3.0 или 2026-10-01"
+      label: Material version / Версия материала
+      description: |-
+        The version number, publication channel or the date when you read the material.
+
+        Номер версии, канал публикации или дата, когда вы читали материал.
+      placeholder: "e.g., v0.3.0 or 2026-10-01 / например, v0.3.0 или 2026-10-01"
   - type: dropdown
     id: reporter
     attributes:
-      label: Вы сообщаете как
+      label: You are reporting as / Вы сообщаете как
       options:
-        - Читатель
-        - Рецензент
-        - Автор или участник проекта
+        - Reader / Читатель
+        - Reviewer / Рецензент
+        - Author or project member / Автор или участник проекта
   - type: checkboxes
     id: duplicates
     attributes:
-      label: Проверка
+      label: Check / Проверка
       options:
-        - label: Я посмотрел(а) открытые issues — об этой ошибке ещё не сообщали
+        - label: I have looked through open issues — this mistake has not been reported yet / Я посмотрел(а) открытые issues — об этой ошибке ещё не сообщали
           required: true

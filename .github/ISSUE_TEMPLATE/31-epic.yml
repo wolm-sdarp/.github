@@ -1,28 +1,40 @@
-name: Эпик
-description: Контейнер для связанных задач — глава, часть книги, раунд рецензирования
+name: Epic / Эпик
+description: A container for related tasks — a chapter, a part of a book, a review round / Контейнер для связанных задач — глава, часть книги, раунд рецензирования
 type: Epic
 body:
   - type: markdown
     attributes:
       value: |
+        An epic contains no work of its own. Add all tasks as sub-issues; the epic is closed when all nested tasks are closed.
+        The recommended depth is two levels.
+
         Эпик собственной работы не содержит. Все задачи добавляйте как sub-issues; эпик закрывается, когда закрыты все вложенные задачи.
         Рекомендуемая глубина — два уровня.
   - type: textarea
     id: goal
     attributes:
-      label: Цель и результат
-      description: Что будет готово, когда эпик закроется.
+      label: Goal and result / Цель и результат
+      description: |-
+        What will be ready when the epic is closed.
+
+        Что будет готово, когда эпик закроется.
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
-      label: Состав
-      description: "Какие задачи входят (по типам: проектирование, написание, задания, редактура, проверка)."
+      label: Composition / Состав
+      description: |-
+        Which tasks are included (by type: design, writing, assignments, editing, review).
+
+        Какие задачи входят (по типам: проектирование, написание, задания, редактура, проверка).
   - type: textarea
     id: done
     attributes:
-      label: Критерий закрытия
-      description: Условия, при которых эпик считается завершённым.
+      label: Closing criterion / Критерий закрытия
+      description: |-
+        The conditions under which the epic is considered complete.
+
+        Условия, при которых эпик считается завершённым.
     validations:
       required: true

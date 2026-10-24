@@ -1,35 +1,47 @@
-name: Техническая возможность
-description: Новый инструмент, расширение Quarto, шаблон или автоматизация
+name: Technical feature / Техническая возможность
+description: A new tool, Quarto extension, template or automation / Новый инструмент, расширение Quarto, шаблон или автоматизация
 type: Feature
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        After creating the issue, add a `tech:*` label. Improving the existing technical part without new functionality
+        (dependency updates, refactoring, settings) is filed with the "Maintenance" form.
+
         После создания добавьте метку `tech:*`. Улучшение существующей технической части без новой функциональности
         (обновление зависимостей, рефакторинг, настройки) оформляется формой «Техническое обслуживание».
   - type: textarea
     id: problem
     attributes:
-      label: Какую задачу нужно решить
-      description: Что сейчас неудобно, долго или невозможно и для кого.
+      label: What problem needs to be solved / Какую задачу нужно решить
+      description: |-
+        What is currently inconvenient, slow or impossible, and for whom.
+
+        Что сейчас неудобно, долго или невозможно и для кого.
     validations:
       required: true
   - type: textarea
     id: proposal
     attributes:
-      label: Предложение
-      description: Что должно появиться и как это будет использоваться.
+      label: Proposal / Предложение
+      description: |-
+        What should appear and how it will be used.
+
+        Что должно появиться и как это будет использоваться.
     validations:
       required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: Рассмотренные альтернативы
+      label: Alternatives considered / Рассмотренные альтернативы
   - type: textarea
     id: done
     attributes:
-      label: Критерий готовности
-      description: Как проверить, что возможность работает (например, пример использования или проверка в CI).
+      label: Definition of done / Критерий готовности
+      description: |-
+        How to verify that the feature works (for example, a usage example or a CI check).
+
+        Как проверить, что возможность работает (например, пример использования или проверка в CI).
     validations:
       required: true

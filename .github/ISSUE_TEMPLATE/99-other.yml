@@ -1,20 +1,25 @@
-name: Другое
-description: Задача, которая не подходит ни под одну из остальных форм
+name: Other / Другое
+description: A task that fits none of the other forms / Задача, которая не подходит ни под одну из остальных форм
 type: Task
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        The Task type is a fallback. If you often choose this form, the type system lacks a new type — please say so at the next review.
+
         Тип Task — запасной. Если вы часто выбираете эту форму, значит, системе типов не хватает нового типа — сообщите об этом при ближайшем пересмотре.
   - type: textarea
     id: description
     attributes:
-      label: Описание
-      description: Что нужно сделать и зачем.
+      label: Description / Описание
+      description: |-
+        What needs to be done and why.
+
+        Что нужно сделать и зачем.
     validations:
       required: true
   - type: textarea
     id: done
     attributes:
-      label: Критерий готовности
+      label: Definition of done / Критерий готовности

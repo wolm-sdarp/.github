@@ -1,30 +1,41 @@
-name: Техническое обслуживание
-description: Зависимости, рефакторинг, настройки репозитория — без новой функциональности
+name: Maintenance / Техническое обслуживание
+description: Dependencies, refactoring, repository settings — no new functionality / Зависимости, рефакторинг, настройки репозитория — без новой функциональности
 type: Maintenance
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        After creating the issue, add a `tech:*` label (for example, `tech:deps`, `tech:repo`, `tech:ci`).
+
         После создания добавьте метку `tech:*` (например, `tech:deps`, `tech:repo`, `tech:ci`).
   - type: textarea
     id: what
     attributes:
-      label: Что нужно сделать
-      description: Какие зависимости, настройки или части кода затрагиваются.
+      label: What needs to be done / Что нужно сделать
+      description: |-
+        Which dependencies, settings or parts of the code are affected.
+
+        Какие зависимости, настройки или части кода затрагиваются.
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
-      label: Зачем
-      description: "Причина: устаревшая версия, предупреждение, подготовка к релизу, упрощение поддержки."
+      label: Why / Зачем
+      description: |-
+        The reason: an outdated version, a warning, release preparation, easier maintenance.
+
+        Причина: устаревшая версия, предупреждение, подготовка к релизу, упрощение поддержки.
     validations:
       required: true
   - type: textarea
     id: check
     attributes:
-      label: Как проверить результат
-      description: Например, сборка проходит, `renv::status()` без расхождений, workflow зелёный.
+      label: How to verify the result / Как проверить результат
+      description: |-
+        For example: the build passes, `renv::status()` shows no discrepancies, the workflow is green.
+
+        Например, сборка проходит, `renv::status()` без расхождений, workflow зелёный.
     validations:
       required: true

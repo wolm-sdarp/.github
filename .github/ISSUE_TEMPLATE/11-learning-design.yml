@@ -1,47 +1,62 @@
-name: Задача по образовательному проектированию
-description: Видение, компетенции, образовательные результаты, стратегия оценки, структура
+name: Learning design task / Задача по образовательному проектированию
+description: Vision, competencies, learning outcomes, assessment strategy, structure / Видение, компетенции, образовательные результаты, стратегия оценки, структура
 type: Learning Design
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        After creating the issue, add an `ld:*` label matching the chosen stage.
+        The assignments and assessment instruments themselves are developed in a separate task of the Assessment type.
+
         После создания добавьте метку `ld:*`, соответствующую выбранному этапу.
         Сами задания и формы контроля разрабатываются отдельной задачей типа Assessment.
   - type: dropdown
     id: stage
     attributes:
-      label: Этап проектирования
+      label: Design stage / Этап проектирования
       options:
-        - 1. Global vision (цели, персоны, jobs to be done, product canvas)
-        - 2. Компетентностный профиль
-        - 3. Образовательные результаты
-        - 4. Assessment (стратегия оценки и согласование с результатами)
-        - 5. Контент (структура, последовательность, образовательные события)
+        - 1. Global vision (goals, personas, jobs to be done, product canvas) / 1. Global vision (цели, персоны, jobs to be done, product canvas)
+        - 2. Competency profile / 2. Компетентностный профиль
+        - 3. Learning outcomes / 3. Образовательные результаты
+        - 4. Assessment (assessment strategy and alignment with outcomes) / 4. Assessment (стратегия оценки и согласование с результатами)
+        - 5. Content (structure, sequence, learning events) / 5. Контент (структура, последовательность, образовательные события)
     validations:
       required: true
   - type: textarea
     id: goal
     attributes:
-      label: Что нужно спроектировать
-      description: Предмет работы и её границы.
+      label: What needs to be designed / Что нужно спроектировать
+      description: |-
+        The subject of the work and its boundaries.
+
+        Предмет работы и её границы.
     validations:
       required: true
   - type: textarea
     id: inputs
     attributes:
-      label: Входные данные
-      description: Результаты предыдущих этапов, документы, таксономии, персоны, ссылки на issues.
+      label: Inputs / Входные данные
+      description: |-
+        Results of previous stages, documents, taxonomies, personas, links to issues.
+
+        Результаты предыдущих этапов, документы, таксономии, персоны, ссылки на issues.
   - type: textarea
     id: artifact
     attributes:
-      label: Ожидаемый артефакт
-      description: Что будет результатом и где он будет храниться.
-      placeholder: "например, таблица образовательных результатов главы 5 в documentation/content/…"
+      label: Expected artifact / Ожидаемый артефакт
+      description: |-
+        What the result will be and where it will be stored.
+
+        Что будет результатом и где он будет храниться.
+      placeholder: "e.g., a table of learning outcomes for chapter 5 in documentation/content/… / например, таблица образовательных результатов главы 5 в documentation/content/…"
     validations:
       required: true
   - type: textarea
     id: outcomes
     attributes:
-      label: Связь с образовательными результатами
-      description: Какие результаты охватывает задача и на каком уровне таксономии (Bloom, SOLO, Fink).
+      label: Link to learning outcomes / Связь с образовательными результатами
+      description: |-
+        Which outcomes the task covers and at which taxonomy level (Bloom, SOLO, Fink).
+
+        Какие результаты охватывает задача и на каком уровне таксономии (Bloom, SOLO, Fink).
