@@ -1,84 +1,106 @@
-name: Выпуск версии
-description: Подготовить и опубликовать версию книги или другого продукта
+name: Release / Выпуск версии
+description: Prepare and publish a version of a book or another product / Подготовить и опубликовать версию книги или другого продукта
 type: Release
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        After creating the issue, add a `channel:*` label and, if needed, `tech:deploy`; link the issue to the release milestone.
+        The release procedure is described in the "Releases and tags" section of the Git and GitHub documentation.
+        The form and the type are reserved: they are enabled once SemVer and release automation are adopted.
+
         После создания добавьте метку `channel:*` и, если нужно, `tech:deploy`; привяжите задачу к milestone выпуска.
         Порядок выпуска — в разделе «Релизы и теги» документации по Git и GitHub.
         Форма и тип в резерве: они включаются, когда принят SemVer и автоматизация выпусков.
   - type: input
     id: product
     attributes:
-      label: Что выпускается
-      placeholder: "например, «Книга 1, русская версия»"
+      label: What is being released / Что выпускается
+      placeholder: "e.g., “Book 1, Russian version” / например, «Книга 1, русская версия»"
     validations:
       required: true
   - type: input
     id: version
     attributes:
-      label: Версия
-      description: Номер по SemVer; для предварительных версий — с суффиксом канала.
-      placeholder: "например, v0.3.0-beta.1 или v1.0.0"
+      label: Version / Версия
+      description: |-
+        A SemVer number; for pre-release versions, with a channel suffix.
+
+        Номер по SemVer; для предварительных версий — с суффиксом канала.
+      placeholder: "e.g., v0.3.0-beta.1 or v1.0.0 / например, v0.3.0-beta.1 или v1.0.0"
     validations:
       required: true
   - type: dropdown
     id: channel
     attributes:
-      label: Канал публикации
+      label: Publication channel / Канал публикации
       options:
         - alpha
-        - beta (для рецензентов)
+        - beta (for reviewers / для рецензентов)
         - stable
     validations:
       required: true
   - type: dropdown
     id: bump
     attributes:
-      label: Изменение версии
-      description: MAJOR — ломает ссылки читателей, MINOR — новая содержательная единица, PATCH — исправления.
+      label: Version bump / Изменение версии
+      description: |-
+        MAJOR — breaks readers' links, MINOR — a new content unit, PATCH — fixes.
+
+        MAJOR — ломает ссылки читателей, MINOR — новая содержательная единица, PATCH — исправления.
       options:
         - MAJOR
         - MINOR
         - PATCH
-        - Не применимо (предварительная версия)
+        - Not applicable (pre-release version) / Не применимо (предварительная версия)
   - type: textarea
     id: scope
     attributes:
-      label: Что входит в выпуск
-      description: Главы и изменения, ссылки на issues и pull requests, чего в выпуске намеренно нет.
+      label: What is included in the release / Что входит в выпуск
+      description: |-
+        Chapters and changes, links to issues and pull requests, what is intentionally left out of the release.
+
+        Главы и изменения, ссылки на issues и pull requests, чего в выпуске намеренно нет.
     validations:
       required: true
   - type: textarea
     id: checklist
     attributes:
-      label: Чек-лист выпуска
-      description: Удалите пункты, которые не относятся к выбранному каналу.
+      label: Release checklist / Чек-лист выпуска
+      description: |-
+        Remove the items that do not apply to the chosen channel.
+
+        Удалите пункты, которые не относятся к выбранному каналу.
       value: |
-        - [ ] Проект собирается без предупреждений
-        - [ ] Все главы из состава выпуска дописаны; черновики не включены
-        - [ ] Переводы не устарели (`source-commit`)
-        - [ ] Собственная вычитка сделана
-        - [ ] Замечания рецензентов обработаны (для stable)
-        - [ ] Полная чистая сборка без `_freeze` прошла (для stable)
-        - [ ] Ссылки проверены
-        - [ ] Версия, лицензия и CHANGELOG заполнены
-        - [ ] Релизный PR `dev` → `master` слит merge-коммитом
-        - [ ] Аннотированный тег поставлен на `master`
-        - [ ] GitHub Release создан, заметки отредактированы
-        - [ ] Публикация проверена на нужном канале
-        - [ ] Milestone закрыт
+        - [ ] The project builds without warnings / Проект собирается без предупреждений
+        - [ ] All chapters in the release are completed; drafts are not included / Все главы из состава выпуска дописаны; черновики не включены
+        - [ ] Translations are up to date (`source-commit`) / Переводы не устарели (`source-commit`)
+        - [ ] Self-proofreading is done / Собственная вычитка сделана
+        - [ ] Reviewers' comments are addressed (for stable) / Замечания рецензентов обработаны (для stable)
+        - [ ] A full clean build without `_freeze` has passed (for stable) / Полная чистая сборка без `_freeze` прошла (для stable)
+        - [ ] Links are checked / Ссылки проверены
+        - [ ] Version, license and CHANGELOG are filled in / Версия, лицензия и CHANGELOG заполнены
+        - [ ] The release PR `dev` → `master` is merged with a merge commit / Релизный PR `dev` → `master` слит merge-коммитом
+        - [ ] An annotated tag is placed on `master` / Аннотированный тег поставлен на `master`
+        - [ ] The GitHub Release is created, the notes are edited / GitHub Release создан, заметки отредактированы
+        - [ ] The publication is verified on the target channel / Публикация проверена на нужном канале
+        - [ ] The milestone is closed / Milestone закрыт
   - type: textarea
     id: notes
     attributes:
-      label: Заметки для читателя
-      description: Что нового и что исправлено — для CHANGELOG и описания релиза.
+      label: Notes for the reader / Заметки для читателя
+      description: |-
+        What is new and what is fixed — for the CHANGELOG and the release description.
+
+        Что нового и что исправлено — для CHANGELOG и описания релиза.
   - type: textarea
     id: done
     attributes:
-      label: Критерий готовности
-      description: Например, версия опубликована на нужном канале, тег и релиз созданы, чек-лист закрыт.
+      label: Definition of done / Критерий готовности
+      description: |-
+        For example: the version is published on the target channel, the tag and release are created, the checklist is completed.
+
+        Например, версия опубликована на нужном канале, тег и релиз созданы, чек-лист закрыт.
     validations:
       required: true

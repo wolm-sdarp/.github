@@ -1,15 +1,29 @@
+# Common issue template chooser settings for all repositories of the wolm-sdarp organization.
+# Applies where a repository has no .github/ISSUE_TEMPLATE folder of its own.
+# Specification: documentation/content/gh-issues-docs.md (§7).
+#
 # Общие настройки выбора шаблонов issues для всех репозиториев организации wolm-sdarp.
 # Действует там, где в самом репозитории нет своей папки .github/ISSUE_TEMPLATE.
 # Спецификация: documentation/content/gh-issues-docs.md (§7).
 
+# Blank issues are disabled: every task is created via a form and gets a type.
+# For tasks outside the classification there is the "Other" form (type Task).
+#
 # Пустые issues отключены: любая задача создаётся через форму и получает тип.
 # Для задач «вне классификации» есть форма «Другое» (тип Task).
 blank_issues_enabled: false
 
+# Link to Discussions for questions about the material (a question is not an issue).
+# Uncomment after enabling Discussions in the organization or the relevant repository
+# and replace the link if necessary.
+#
 # Ссылка на Discussions для вопросов по материалу (вопрос — не issue).
 # Раскомментируйте после включения Discussions в организации или нужном репозитории
 # и при необходимости замените ссылку.
 contact_links:
-  - name: Вопрос по материалу
+  - name: Question about the material / Вопрос по материалу
     url: https://github.com/orgs/wolm-sdarp/discussions
-    about: Вопросы, обсуждения и идеи — в Discussions. Issue нужен, если в материале ошибка или его нужно изменить.
+    about: |-
+      Questions, discussions and ideas go to Discussions. An issue is needed if the material contains a mistake or needs to be changed.
+
+      Вопросы, обсуждения и идеи — в Discussions. Issue нужен, если в материале ошибка или его нужно изменить.

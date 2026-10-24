@@ -1,46 +1,66 @@
-name: Задача по заданиям и формам контроля
-description: Разработать, проверить или откалибровать задания, упражнения, формы контроля
+name: Assessment task / Задача по заданиям и формам контроля
+description: Develop, review or calibrate assignments, exercises, assessment instruments / Разработать, проверить или откалибровать задания, упражнения, формы контроля
 type: Assessment
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        For exercises inside a book, add the `content:exercise` label; if needed, also `ld:*` and `lang:*`.
+
         Для упражнений внутри книги добавьте метку `content:exercise`; при необходимости — `ld:*` и `lang:*`.
   - type: textarea
     id: scope
     attributes:
-      label: Что нужно разработать или проверить
-      description: Набор заданий, форма контроля, этап (разработка, экспертиза, пилотирование, калибровка).
+      label: What needs to be developed or reviewed / Что нужно разработать или проверить
+      description: |-
+        A set of assignments, an assessment instrument, the stage (development, expert review, piloting, calibration).
+
+        Набор заданий, форма контроля, этап (разработка, экспертиза, пилотирование, калибровка).
     validations:
       required: true
   - type: textarea
     id: outcomes
     attributes:
-      label: Какие образовательные результаты покрываются
-      description: Ссылки на результаты или их формулировки.
+      label: Which learning outcomes are covered / Какие образовательные результаты покрываются
+      description: |-
+        Links to the outcomes or their wording.
+
+        Ссылки на результаты или их формулировки.
     validations:
       required: true
   - type: input
     id: taxonomy
     attributes:
-      label: Уровень таксономии
-      description: Уровень по используемой таксономии.
-      placeholder: "например, Bloom: применение; SOLO: relational"
+      label: Taxonomy level / Уровень таксономии
+      description: |-
+        The level in the taxonomy used.
+
+        Уровень по используемой таксономии.
+      placeholder: "e.g., Bloom: applying; SOLO: relational / например, Bloom: применение; SOLO: relational"
   - type: textarea
     id: format
     attributes:
-      label: Формат заданий
-      description: Тип заданий, количество, использование данных и кода, автоматическая проверка.
+      label: Assignment format / Формат заданий
+      description: |-
+        Type of assignments, number, use of data and code, automatic checking.
+
+        Тип заданий, количество, использование данных и кода, автоматическая проверка.
   - type: textarea
     id: scoring
     attributes:
-      label: Критерии оценивания
-      description: Ключи, рубрики, правила начисления баллов, решения для самопроверки.
+      label: Scoring criteria / Критерии оценивания
+      description: |-
+        Answer keys, rubrics, scoring rules, solutions for self-checking.
+
+        Ключи, рубрики, правила начисления баллов, решения для самопроверки.
   - type: textarea
     id: done
     attributes:
-      label: Критерий готовности
-      description: Например, задания проверены, решения воспроизводятся, соответствие результатам подтверждено.
+      label: Definition of done / Критерий готовности
+      description: |-
+        For example: assignments are reviewed, solutions are reproducible, alignment with outcomes is confirmed.
+
+        Например, задания проверены, решения воспроизводятся, соответствие результатам подтверждено.
     validations:
       required: true

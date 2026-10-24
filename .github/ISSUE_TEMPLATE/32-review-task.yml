@@ -1,11 +1,17 @@
-name: Задача по рецензированию
-description: Организовать и провести научную, методическую, редакторскую или техническую рецензию
+name: Review task / Задача по рецензированию
+description: Organize and run a scientific, methodological, editorial or technical review / Организовать и провести научную, методическую, редакторскую или техническую рецензию
 type: Review
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        This form describes the review process itself. File reviewers' comments as separate tasks:
+        with the "Content mistake" form if there is a mistake, and with the "Edit proposal" form if there is none;
+        add the `src:reviewer` label to them and link to this task.
+        If there are several reviewers or a separate round is under way, create an Epic for the round and add this task to it.
+        After creating the issue, add a `channel:*` label if a published version is being reviewed.
+
         Форма описывает сам процесс рецензирования. Замечания рецензентов оформляйте отдельными задачами:
         формой «Ошибка в материале», если есть ошибка, и формой «Предложение по улучшению», если ошибки нет;
         добавляйте им метку `src:reviewer` и ссылайтесь на эту задачу.
@@ -14,60 +20,72 @@ body:
   - type: dropdown
     id: kind
     attributes:
-      label: Вид рецензии
+      label: Type of review / Вид рецензии
       options:
-        - Научная (корректность содержания и статистики)
-        - Методическая (образовательные результаты, задания, последовательность)
-        - Редакторская (язык, стиль, терминология)
-        - Техническая (сборка, код, отображение, доступность)
-        - Комплексная
+        - Scientific (correctness of content and statistics) / Научная (корректность содержания и статистики)
+        - Methodological (learning outcomes, assignments, sequence) / Методическая (образовательные результаты, задания, последовательность)
+        - Editorial (language, style, terminology) / Редакторская (язык, стиль, терминология)
+        - Technical (build, code, rendering, accessibility) / Техническая (сборка, код, отображение, доступность)
+        - Comprehensive / Комплексная
     validations:
       required: true
   - type: input
     id: subject
     attributes:
-      label: Что рецензируется
-      placeholder: "например, «Книга 1, главы 3–5» или «Блок заданий к главе 5»"
+      label: What is being reviewed / Что рецензируется
+      placeholder: "e.g., “Book 1, chapters 3–5” or “Assignment set for chapter 5” / например, «Книга 1, главы 3–5» или «Блок заданий к главе 5»"
     validations:
       required: true
   - type: input
     id: version
     attributes:
-      label: Версия для рецензирования
-      description: Тег, коммит или канал публикации — зафиксированная версия, которую читает рецензент.
-      placeholder: "например, v0.3.0-beta.1"
+      label: Version for review / Версия для рецензирования
+      description: |-
+        A tag, commit or publication channel — the fixed version the reviewer reads.
+
+        Тег, коммит или канал публикации — зафиксированная версия, которую читает рецензент.
+      placeholder: "e.g., v0.3.0-beta.1 / например, v0.3.0-beta.1"
     validations:
       required: true
   - type: input
     id: reviewers
     attributes:
-      label: Рецензенты
-      description: Issues публичны, поэтому для внешних рецензентов указывайте только роль или имя, которое они разрешили раскрывать; контакты не указывайте.
+      label: Reviewers / Рецензенты
+      description: |-
+        Issues are public, so for external reviewers give only a role or a name they have agreed to disclose; do not give contact details.
+
+        Issues публичны, поэтому для внешних рецензентов указывайте только роль или имя, которое они разрешили раскрывать; контакты не указывайте.
   - type: textarea
     id: focus
     attributes:
-      label: Вопросы и границы рецензии
-      description: На что рецензенту смотреть в первую очередь, какие вопросы ему задаются и что находится вне рамок рецензии.
+      label: Questions and scope of the review / Вопросы и границы рецензии
+      description: |-
+        What the reviewer should look at first, which questions they are asked, and what is outside the scope of the review.
+
+        На что рецензенту смотреть в первую очередь, какие вопросы ему задаются и что находится вне рамок рецензии.
     validations:
       required: true
   - type: dropdown
     id: collection
     attributes:
-      label: Как собираются замечания
+      label: How comments are collected / Как собираются замечания
       options:
-        - Issues в репозитории
-        - Аннотации (например, Hypothesis) с переносом в issues
-        - Письмо или документ с переносом в issues
-        - Другое (укажите в описании)
+        - Issues in the repository / Issues в репозитории
+        - Annotations (e.g., Hypothesis) transferred to issues / Аннотации (например, Hypothesis) с переносом в issues
+        - An email or a document transferred to issues / Письмо или документ с переносом в issues
+        - Other (specify in the description) / Другое (укажите в описании)
   - type: input
     id: window
     attributes:
-      label: Срок рецензирования
-      placeholder: "например, 3 недели с 2026-11-01"
+      label: Review period / Срок рецензирования
+      placeholder: "e.g., 3 weeks starting 2026-11-01 / например, 3 недели с 2026-11-01"
   - type: textarea
     id: done
     attributes:
-      label: Критерий завершения
-      description: Например, все замечания получили ответ («исправлено» или «отклонено с причиной»), оформлены задачи, внесённые правки проверены.
+      label: Completion criterion / Критерий завершения
+      description: |-
+        For example: all comments have received a response ("fixed" or "rejected with a reason"), tasks are filed, the introduced changes are verified.
+
+        Например, все замечания получили ответ («исправлено» или «отклонено с причиной»), оформлены задачи, внесённые правки проверены.
     validations:
       required: true

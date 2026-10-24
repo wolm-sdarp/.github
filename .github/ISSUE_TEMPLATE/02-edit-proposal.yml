@@ -1,45 +1,60 @@
-name: Предложение по улучшению
-description: Материал верен, но его можно сделать понятнее, полнее или короче
+name: Edit proposal / Предложение по улучшению
+description: The material is correct, but it could be clearer, fuller or shorter / Материал верен, но его можно сделать понятнее, полнее или короче
 type: Editing
 labels: ["status:needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
+        This form is for remarks when there is no mistake, but the text, structure or an example could be improved.
+        If the material contains a mistake, choose the "Content mistake" form.
+
         Эта форма — для замечаний, когда ошибки нет, но текст, структуру или пример можно улучшить.
         Если в материале есть ошибка, выберите форму «Ошибка в материале».
   - type: input
     id: where
     attributes:
-      label: Где
-      description: Ссылка на страницу или раздел, глава, номер рисунка или упражнения.
-      placeholder: "https://… или «Глава 3, раздел 3.4»"
+      label: Where / Где
+      description: |-
+        A link to the page or section, chapter, figure or exercise number.
+
+        Ссылка на страницу или раздел, глава, номер рисунка или упражнения.
+      placeholder: "https://… or “Chapter 3, section 3.4” / https://… или «Глава 3, раздел 3.4»"
     validations:
       required: true
   - type: textarea
     id: what
     attributes:
-      label: Что улучшить
-      description: Что именно вызвало затруднение или чего не хватает.
+      label: What to improve / Что улучшить
+      description: |-
+        What exactly caused difficulty or what is missing.
+
+        Что именно вызвало затруднение или чего не хватает.
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
-      label: Зачем
-      description: Что изменится для читателя, если это улучшить.
+      label: Why / Зачем
+      description: |-
+        What will change for the reader if this is improved.
+
+        Что изменится для читателя, если это улучшить.
     validations:
       required: true
   - type: textarea
     id: idea
     attributes:
-      label: Идея решения
-      description: Необязательно — как, по вашему мнению, это можно сделать.
+      label: Idea for a solution / Идея решения
+      description: |-
+        Optional — how you think this could be done.
+
+        Необязательно — как, по вашему мнению, это можно сделать.
   - type: dropdown
     id: reporter
     attributes:
-      label: Вы сообщаете как
+      label: You are reporting as / Вы сообщаете как
       options:
-        - Читатель
-        - Рецензент
-        - Автор или участник проекта
+        - Reader / Читатель
+        - Reviewer / Рецензент
+        - Author or project member / Автор или участник проекта
