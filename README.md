@@ -103,4 +103,11 @@ Changes to this repository affect every repository of the organization, so they 
 
 ## License
 
-*TBA.*
+Unless otherwise noted:
+
+- **content** of the WoLM SDARP project (texts, illustrations, assignments and other educational materials, documentation) is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/);
+- **code** of the project is licensed under the [MIT License](https://opensource.org/license/mit). This covers both technical code (build and publishing scripts, workflows, configurations, and utilities) and code examples in the books and other materials, including code embedded in the text.
+
+Some materials may be distributed under a different license; in that case, the license is stated in the material itself or in the repository where it is published.
+
+Datasets and other third-party materials are distributed under their own licenses, which are stated separately for each of them.
