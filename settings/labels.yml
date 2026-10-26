@@ -181,12 +181,12 @@ labels:
     sets: [content]
     reserve: false
     aliases: []
-  - name: "lang:ru-petr1708"
+  - name: "lang:rd"
     color: "bf8700"
-    description: "Pre-reform Russian orthography version"
+    description: "Pre-reform Russian orthography version (BCP 47: ru-petr1708)"
     sets: [content]
     reserve: false
-    aliases: []
+    aliases: ["lang:ru-petr1708"]
 
   # ---- src: источник обращения -------------------------------------------------------------
   - name: "src:reader"
