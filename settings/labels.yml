@@ -14,7 +14,7 @@ org: wolm-sdarp
 repo_sets:
   content: [book0, book1, assessment0, assessment1, annex]
   docs: [documentation]
-  platform: [wolm-sdarp.github.io, .github, manim]
+  platform: [wolm-sdarp.github.io, .github, manim, kit]
 
 # Метки, которые создают сторонние инструменты (Dependabot); скрипт их не трогает.
 ignore: [javascript, github_actions]
@@ -274,7 +274,7 @@ labels:
     reserve: false
     aliases: []
 
-  # ---- резерв: релизы и каналы (включаются по условиям §9.2) -------------------------------
+  # ---- релизы и каналы -------------------------------
   - name: "bump:major"
     color: "1b7c83"
     description: "PR: breaks links, anchors or numbering readers rely on"
