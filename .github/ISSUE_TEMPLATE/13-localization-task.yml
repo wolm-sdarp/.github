@@ -17,7 +17,7 @@ body:
       label: Language version / Языковая версия
       options:
         - en-US — English (US) / en-US — английский (США)
-        - ru-petr1708 — Russian, pre-reform orthography / ru-petr1708 — русский, дореформенная орфография
+        - rd — Russian, pre-reform orthography (ru-petr1708) / rd — русский, дореформенная орфография (ru-petr1708)
         - Other (specify in the description) / Другая (укажите в описании)
     validations:
       required: true
@@ -89,9 +89,9 @@ body:
     attributes:
       label: Who proofreads / Кто вычитывает
       description: |-
-        A person who knows the target language; for `ru-petr1708`, an expert in this orthography.
+        A person who knows the target language; for `rd`, an expert in this orthography.
 
-        Человек, владеющий языком перевода; для `ru-petr1708` — эксперт по этой орфографии.
+        Человек, владеющий языком перевода; для `rd` — эксперт по этой орфографии.
   - type: textarea
     id: done
     attributes:
